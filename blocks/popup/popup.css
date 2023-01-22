@@ -7,5 +7,12 @@
     position: fixed;
     display: none;
     justify-content: center;
-    align-items: center;
+    /* align-items: center;*/
+    padding-top: 195px;
+}
+
+@media screen and (max-width: 650px) {
+    .popup {
+        padding-top: 123px;
+    }
 }

@@ -4,8 +4,8 @@
     width: 32px;
     height: 32px;
     position: absolute;
-    background-image: url(../../../images/iconClose.png);
-    background-color: black;
+    background-image: url(../../../images/iconClose.svg);
+    background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
     border: none;

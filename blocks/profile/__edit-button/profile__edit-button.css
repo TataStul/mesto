@@ -3,7 +3,7 @@
     min-width: 24px;
     height: 24px;
     background-image: url(../../../images/buttonEdit.svg);
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;

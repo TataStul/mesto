@@ -13,9 +13,6 @@
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 650px) {
-    .popup__account {
-        font-size: 14px;
-        line-height: 17px;
-    }
+.popup__account:nth-last-child(2) {
+    margin-top: 21px;
 }

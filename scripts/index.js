@@ -12,18 +12,16 @@ let accountName = document.querySelector('.profile__description-text');
 let accountWork = document.querySelector('.profile__description-subtitle');
 //opening popup
 let popupOpen = function() {
-        popupElement.classList.add('popup_opened');
-        nameInput.value = accountName.textContent;
-        workInput.value = accountWork.textContent;
-    }
-    // adding Event Listener for function popupOpen
-popupOpenButton.addEventListener('click', popupOpen);
+    popupElement.classList.add('popup_opened');
+    nameInput.value = accountName.textContent;
+    workInput.value = accountWork.textContent;
+}
+
 //closing popup
 let popupClose = function() {
-        popupElement.classList.remove('popup_opened')
-    }
-    // adding Event Listener for function popupClose
-popupCloseButton.addEventListener('click', popupClose);
+    popupElement.classList.remove('popup_opened')
+}
+
 // adding function for input two texts - Name and Work
 function handleFormSubmit(evt) {
     evt.preventDefault();
@@ -31,5 +29,10 @@ function handleFormSubmit(evt) {
     accountWork.textContent = workInput.value;
     popupClose();
 }
+
+// adding Event Listener for function popupOpen
+popupOpenButton.addEventListener('click', popupOpen);
+// adding Event Listener for function popupClose
+popupCloseButton.addEventListener('click', popupClose);
 // adding Event Listener for function handleFormSubmit
 formElement.addEventListener('submit', handleFormSubmit);
