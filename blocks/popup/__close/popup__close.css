@@ -4,7 +4,7 @@
     width: 32px;
     height: 32px;
     position: absolute;
-    background-image: url(/images/iconClose.png);
+    background-image: url(../../../images/iconClose.png);
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
