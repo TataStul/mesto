@@ -1,0 +1,22 @@
+.popup__account {
+    font-family: "Inter", Arial, sans-serif;
+    border: 0;
+    width: 100%;
+    min-height: 35px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 650px) {
+    .popup__account {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

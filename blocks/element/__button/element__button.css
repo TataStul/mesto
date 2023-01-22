@@ -1,0 +1,18 @@
+.element__button {
+    width: 22px;
+    height: 19px;
+    background-image: url(/images/iconLikeEmpty.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.element__button:hover {
+    opacity: 0.5;
+}
+
+.element__button:active {
+    background-color: black;
+}

@@ -1,0 +1,13 @@
+.profile__description-title {
+    max-width: 336px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+    .profile__description-title {
+        margin-top: 25px;
+        max-width: 250px;
+    }
+}
