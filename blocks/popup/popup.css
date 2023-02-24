@@ -5,10 +5,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    display: none;
     justify-content: center;
     align-items: start;
     padding-top: 195px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 650px) {

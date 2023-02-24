@@ -15,73 +15,69 @@
   <main class="content">
     <section class="profile">
       <div class="profile__block">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Фото аккаунта">
+        <img class="profile__avatar" src="./images/tatiana_s.png" alt="Фото аккаунта">
         <div class="profile__description">
-          <div class="profile__description-title"><h1 class="profile__description-text">Жак-Ив Кусто</h1><button class="profile__edit-button" type="button" aria-label="Edit"></button></div>
-          <p class="profile__description-subtitle">Исследователь океана</p>
+          <div class="profile__description-title">
+          <h1 class="profile__description-text">Таня С.</h1>
+          <button class="profile__edit-button" type="button" aria-label="Edit"></button>
+          </div>
+          <p class="profile__description-subtitle">студент Яндекс.Практикум</p>
         </div>
       </div>
       <button class="profile__add-button" type="button" aria-label="Add"></button>
     </section>
     <section class="elements">
-      <ul class="elements__list">
-        <li class="element">
-          <img class="element__image" src="./images/photoKarachaevsk.jpg" alt="Фото Карачаевск">
-          <div class="element__description"><h2 class="element__title">Карачаевск</h2><button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/photoElbrus.png" alt="Фото Гора Эльбрус">
-          <div class="element__description">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/photoDombai.png" alt="Фото Домбай">
-          <div class="element__description">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/photoElbrus.png" alt="Фото Эльбрус">
-          <div class="element__description">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/photoDombai.png" alt="Фото Домбай">
-          <div class="element__description">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/photoKarachaevsk.jpg" alt="Фото Карачаево-Черкесск">
-          <div class="element__description">
-            <h2 class="element__title">Карачаево-Черкесск</h2>
-            <button class="element__button" type="button" aria-label="Like"></button>
-          </div>
-        </li>
-      </ul>
+      <ul class="elements__list"></ul>
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__author">© 2023 Mesto Russia x Stulkova Tatiana</p>
+    <p class="footer__author">© 2023 Mesto Russia x Tatiana S.</p>
   </footer>
-  <section class="popup">
-    <div class="popup__container">
-      <h2 class="popup__name">Редактировать профиль</h2>
-      <form class="popup__input-container" name="form">
-        <input class="popup__account popup__account_input_name" type="text" name="name">
-        <input class="popup__account popup__account_input_work" type="text" name="work">
-        <button class="popup__save" type="submit">Сохранить</button>
+  <!-- account -->
+  <section class="popup popup_type_account">
+    <div class="popup__container popup__container_type_account">
+      <h2 class="popup__name popup__name_type_account">Редактировать профиль</h2>
+      <form class="popup__input-container popup__input-container_type_account" name="form">
+        <input id="input-account-name" class="popup__account popup__account_input_name" type="text" name="name" placeholder="Имя и Фамилия">
+        <input id="input-account-work" class="popup__account popup__account_input_work" type="text" name="work" placeholder="Вид деятельности">
+        <button class="popup__save popup__save_type_account" type="submit">Сохранить</button>
       </form>
       <button class="popup__close" type="button" aria-label="Close"></button>
     </div>
   </section>
-  <script src="./scripts/index.js"></script>
+  <!-- element -->
+  <section class="popup popup_type_element">
+    <div class="popup__container popup__container_type_element">
+      <h2 class="popup__name popup__name_type_element">Новое место</h2>
+      <form class="popup__input-container popup__input-container_type_element" name="form">
+        <input id="input-element-name" class="popup__account popup__account_input_element-name" type="text" name="name" placeholder="Название">
+        <input id="input-element-url" class="popup__account popup__account_input_element-url" type="text" name="url" placeholder="Ссылка на картинку">
+        <button class="popup__save popup__save_type_element" type="submit">Создать</button>
+      </form>
+      <button class="popup__close" type="button" aria-label="Close"></button>
+    </div>
+  </section>
+  <!-- image -->
+  <section class="popup popup_type_image">
+    <div class="popup__image-window">
+      <figure class="popup__image-figure">
+        <img class="popup__image-picture" src="#">
+        <figcaption class="popup__image-figcaption"></figcaption>
+      </figure>
+      <button class="popup__close" type="button"></button>
+    </div>
+  </section>
+  <!-- template -->
+  <template id="element-add">
+    <li class="element">
+      <button class="element__trash" type="button" aria-label="Delete"></button>
+      <img class="element__image" src="#" alt="Фото">
+      <div class="element__description"><h2 class="element__title"></h2><button class="element__button" type="button" aria-label="Like"></button>
+      </div>
+    </li>
+  </template>
+  <!-- scripts -->
+  <script defer src="./scripts/cards.js"></script>
+  <script defer src="./scripts/index.js"></script>
 </body>
 </html>
