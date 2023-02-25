@@ -10,7 +10,7 @@ const popupElementCard = document.querySelector(".popup_type_element");
 const inputContainerElement = popupElementCard.querySelector(".popup__input-container_type_element");
 const elementCardInputName = inputContainerElement.querySelector(".popup__account_input_element-name");
 const elementCardInputUrl = inputContainerElement.querySelector(".popup__account_input_element-url");
-const addPopupElementCardButton = document.querySelector(".profile__add-button");
+const popupElementCardAddButton = document.querySelector(".profile__add-button");
 // const for account (popup)
 const popupAccount = document.querySelector(".popup_type_account");
 const containerAccount = popupAccount.querySelector(".popup__input-container_type_account");
@@ -18,7 +18,7 @@ const accountName = document.querySelector('.profile__description-text');
 const accountWork = document.querySelector('.profile__description-subtitle');
 const nameInput = containerAccount.querySelector('.popup__account_input_name');
 const workInput = containerAccount.querySelector('.popup__account_input_work');
-const openPopupAccountButton = document.querySelector(".profile__edit-button");
+const popupAccountOpenButton = document.querySelector(".profile__edit-button");
 // const for closing popup on button (кнока крестик в углу)
 const popupList = document.querySelectorAll(".popup");
 
@@ -35,7 +35,7 @@ const openPopup = function(popupContainer) {
     popupContainer.classList.add("popup_opened");
     document.addEventListener("keyup", handleCloseByEsc);
 };
-const closePOpup = function(popupContainer) {
+const closePopup = function(popupContainer) {
     popupContainer.classList.remove("popup_opened");
     document.removeEventListener("keyup", handleCloseByEsc);
 };
@@ -45,13 +45,13 @@ popupList.forEach((popupContainer) => {
     const closePopupButton = popupContainer.querySelector(".popup__close");
     popupContainer.addEventListener("click", function(event) {
         if (event.target === closePopupButton) {
-            closePOpup(popupContainer);
+            closePopup(popupContainer);
         }
     });
 });
 
 // section account - Open\Close
-openPopupAccountButton.addEventListener("click", function() {
+popupAccountOpenButton.addEventListener("click", function() {
     openPopup(popupAccount);
     nameInput.value = accountName.textContent;
     workInput.value = accountWork.textContent;
@@ -62,14 +62,14 @@ function handleFormSubmit(evt) {
     evt.preventDefault();
     accountName.textContent = nameInput.value;
     accountWork.textContent = workInput.value;
-    closePOpup(popupAccount);
+    closePopup(popupAccount);
 }
 
 // EventListener - containerAccount for account
 containerAccount.addEventListener("submit", handleFormSubmit);
 
 // EventListener - popupElementCardAddButton for image
-addPopupElementCardButton.addEventListener("click", function() {
+popupElementCardAddButton.addEventListener("click", function() {
     elementCardInputName.value = "";
     elementCardInputUrl.value = "";
     openPopup(popupElementCard);
