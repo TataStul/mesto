@@ -1,13 +1,3 @@
-// перечень параетров в одном месте
-boxForValidation({
-    formSelector: ".popup__input-container",
-    inputSelector: ".popup__account",
-    inputErrorClass: "popup__account_type_active",
-    errorClass: "popup__account-error_active",
-    submitButtonSelector: ".popup__save",
-    inactiveButtonClass: "popup__save_noactive",
-});
-
 // show error (оповещение об ошибке)
 const showError = (formElement, inputElement, errorMessage, config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -19,7 +9,7 @@ const showError = (formElement, inputElement, errorMessage, config) => {
 };
 
 // delete error (удаление оповещения об ошибке)
-const notShowError = (formElement, inputElement, config) => {
+const hideError = (formElement, inputElement, config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     if (errorElement) {
         inputElement.classList.remove(config.inputErrorClass);
@@ -33,7 +23,7 @@ const checkValidity = (formElement, inputElement, config) => {
     if (!inputElement.validity.valid) {
         showError(formElement, inputElement, inputElement.validationMessage, config);
     } else {
-        notShowError(formElement, inputElement, config);
+        hideError(formElement, inputElement, config);
     }
 };
 
@@ -74,7 +64,7 @@ const hasInvalidInput = (inputList) => {
 };
 
 // прием массива полей
-const boxForValidation = (config) => {
+const enableValidation = (config) => {
     const formList = Array.from(document.querySelectorAll(".popup"));
     formList.forEach((formElement) => { //перебор массива formList
         formElement.addEventListener("submit", function(evt) {
@@ -88,3 +78,13 @@ const boxForValidation = (config) => {
         });
     });
 };
+
+// перечень параетров в одном месте
+enableValidation({
+    formSelector: ".popup__input-container",
+    inputSelector: ".popup__account",
+    inputErrorClass: "popup__account_type_active",
+    errorClass: "popup__account-error_active",
+    submitButtonSelector: ".popup__save",
+    inactiveButtonClass: "popup__save_noactive",
+});
