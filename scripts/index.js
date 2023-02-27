@@ -1,5 +1,6 @@
 // const for template
 const template = document.querySelector("#element-add");
+const saveButton = document.querySelector(".popup__save_type_element");
 const elementsList = document.querySelector(".elements__list");
 // const for big image
 const popupImage = document.querySelector(".popup_type_image");
@@ -44,7 +45,7 @@ const closePopup = function(popupContainer) {
 popupList.forEach((popupContainer) => {
     const closePopupButton = popupContainer.querySelector(".popup__close");
     popupContainer.addEventListener("click", function(event) {
-        if (event.target === closePopupButton) {
+        if (event.target === event.currentTarget || event.target === closePopupButton) {
             closePopup(popupContainer);
         }
     });
@@ -121,4 +122,6 @@ inputContainerElement.addEventListener("submit", (element) => {
     });
     elementsList.prepend(elementCard);
     closePopup(popupElementCard);
+    element.submitter.classList.add('popup__save_noactive');
+    element.submitter.disabled = true;
 });
